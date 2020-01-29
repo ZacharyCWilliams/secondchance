@@ -6,9 +6,9 @@ There are currently 2.2 million people incarcerated in the United States. Taxpay
 
 Fortunately, 95% of our prisoners WILL be released from prison at some point. This means we have a tremendous opportunity to help people and reduce costs surrounding the prison system! We believe that when an issue of this magnitude presents itself, we have a **responsibility** to act. 
 
-Here's where **ThePenPal** comes in: studies show that when a prisoner has access to, and can build relationships with, people outside of the prison system their odds of returning to prison SIGNIFICANTLY decrease (Vox reports that a single 25% decrease).
+Here's where **ThePenPal** comes in: studies show that when a prisoner has access to, and can build relationships with, people outside of the prison system their odds of returning to prison SIGNIFICANTLY decrease (Vox reports that a single relationship results in a 25% decrease).
 
-Our goal through ThePenPal is to give people a super convenient, easy to use, way to connect with inmates so that we can lift our prisoners, drop the recitivism rate, and spend the money we're currently wasting on rebuilding this nation. 
+Our goal through ThePenPal is to give people a super convenient, easy to use, way to connect with inmates so that we can lift our prisoners, drop the recidivism rate, and spend the money we're currently wasting on rebuilding this nation. 
 
 ## Available Scripts
 
