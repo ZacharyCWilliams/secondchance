@@ -3,6 +3,7 @@ module.exports = (app) => {
 
   // Create a new citizen
   app.post('/citizens', citizens.create);
-  // Get a new citizen
+
+  // Get a single citizen
   app.get('/citizens/:citizenId', citizens.findOne);
 }
