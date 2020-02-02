@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
-import logo from './logo.svg';
+import HomePage from "./components/HomePage";
 import './App.css';
-
 
 // async function fetchUsers() {
 //   try {
@@ -35,9 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <h1>Home Page</h1>
-        </div>
+          <HomePage />
       </div>
     );
   }
