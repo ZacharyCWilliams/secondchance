@@ -29,8 +29,6 @@ function HomePage() {
               placeholder="Enter State.."
               className="search-bar"
               type="text"
-              // value={this.state.value}
-              // onChange={this.handleChange}
             />
             <input className="home-submit-button" type="submit" value=">" />
           </form>
