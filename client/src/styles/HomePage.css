@@ -23,6 +23,8 @@
   padding-bottom: 25px;
 }
 
+
+/*
 .button-light {
   letter-spacing: 0.72px;
   font-weight: 600;
@@ -62,7 +64,8 @@
   min-width: 165px;
   display: flex;
   justify-content: space-between;
-}
+} */
+
 
 .home-text-section {
   display: flex;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomePage from "./components/HomePage";
+import HomePage from "./containers/HomePage";
 import './App.css';
 
 // async function fetchUsers() {
@@ -14,10 +14,6 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      test: 'none'
-    }
-
   }
 
   fetchUsers = () => {
