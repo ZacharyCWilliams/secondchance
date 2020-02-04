@@ -10,14 +10,14 @@
 
 
 .home-h1 {
-  font-size: 56px;
+  font-size: 50px;
   font-weight: 800;
   margin-bottom: 20px;
 }
 
 
 .home-p {
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 
@@ -37,24 +37,24 @@
 
 .search-bar {
   align-items: center;
-    background-color: #fff;
-    width: 396px;
-    -webkit-box-pack: start;
-    text-overflow: ellipsis;
-    color: rgb(45, 49, 56);
-    font-family: PostmatesStd, "Helvetica Neue", Helvetica;
-    font-size: 16px;
-    letter-spacing: 0.14px;
-    font-weight: 400;
-    line-height: normal;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 16px;
-    padding-bottom: 19px;
-    border-width: initial;
-    border-style: none;
-    border-color: initial;
-    border-image: initial;
+  background-color: #fff;
+  width: 335px;
+  -webkit-box-pack: start;
+  text-overflow: ellipsis;
+  color: rgb(45, 49, 56);
+  font-family: PostmatesStd, "Helvetica Neue", Helvetica;
+  font-size: 16px;
+  letter-spacing: 0.14px;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 16px;
+  padding-bottom: 19px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
 
     /* added */
      outline: 0;
@@ -89,5 +89,5 @@
 .button-flex-container {
   display: flex;
   align-self: flex-end;
-  width: 310px;
+  width: 335px;
 }
