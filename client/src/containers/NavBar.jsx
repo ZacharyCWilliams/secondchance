@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../styles/NavBar.css';
+import '../styles/NavBar/NavBar.css';
 
 //components
 import NavMapper from '../components/NavMapper';
@@ -38,3 +38,5 @@ class NavBar extends Component {
 
 
 export default NavBar;
+
+

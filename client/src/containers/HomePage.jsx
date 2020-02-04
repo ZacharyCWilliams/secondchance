@@ -1,6 +1,11 @@
 import React, { Component } from "react";
-import "../styles/HomePage.css";
+
+//styles
+import "../styles/Home/HomePage.css";
+
+//components
 import NavBar from "./NavBar";
+import HomeMainSection from "../components/HomeMainSection";
 
 class HomePage extends Component {
   handleLogIn() {
@@ -16,10 +21,14 @@ class HomePage extends Component {
       <div className="home-container">
         <div className="home-main-div">
           <NavBar buttons={['Log In', 'Sign Up']} links={['About','Donate', 'Contact']} buttonActions={[this.handleLogIn, this.handleSignUp]} />
+          <HomeMainSection />
         </div>
       </div>
     );
   }
 }
 
+
 export default HomePage;
+
+

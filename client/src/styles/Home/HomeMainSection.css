@@ -1,72 +1,3 @@
-.home-container {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-}
-
-.home-main-div {
-  width: 1024px;
-  height: 100%;
-}
-
-.home-title {
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.home-navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
-
-
-/*
-.button-light {
-  letter-spacing: 0.72px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: normal;
-  border: 1px solid rgba(45,49,56,0.15);
-  color: black;
-  background-color: transparent;
-  height: 32px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 16px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.button-light:hover {
-  background-color: rgba(45,49,56,0.03);
-}
-
-.button-dark {
-  letter-spacing: 0.72px;
-  color: #F4DCDC;
-  background-color: #2D3138;
-  margin-right: 0;
-  height: 32px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 16px;
-  cursor: pointer;
-  white-space: nowrap;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.button-group {
-  min-width: 165px;
-  display: flex;
-  justify-content: space-between;
-} */
-
-
 .home-text-section {
   display: flex;
   flex-direction: column;
@@ -77,16 +8,32 @@
   padding: 20px 130px;
 }
 
+
 .home-h1 {
   font-size: 56px;
   font-weight: 800;
   margin-bottom: 20px;
 }
 
+
 .home-p {
   font-size: 17px;
   margin-bottom: 20px;
 }
+
+.home-form {
+  margin-top: 10px;
+}
+
+
+.home-submit-button {
+  background-color: #2DECE5;
+  cursor: pointer;
+  color: white;
+  width: 58px;
+  height: 56px;
+}
+
 
 .search-bar {
   align-items: center;
@@ -108,24 +55,18 @@
     border-style: none;
     border-color: initial;
     border-image: initial;
+
+    /* added */
+     outline: 0;
+    border: none;
 }
 
-.search-bar {
-  outline: 0;
-  border: none;
-}
 
 .home-form {
   margin-top: 10px;
 }
 
-.home-submit-button {
-  background-color: #2DECE5;
-  cursor: pointer;
-  color: white;
-  width: 58px;
-  height: 56px;
-}
+
 
 .browse-all-button {
   letter-spacing: 0.72px;
