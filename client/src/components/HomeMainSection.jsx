@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Home/HomeMainSection.css";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 function HomeMainSection() {
