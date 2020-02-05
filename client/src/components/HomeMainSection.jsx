@@ -13,10 +13,10 @@ function HomeMainSection() {
         ThePenPal, your go to place for messaging inmates
       </p>
       <form className="home-form">
-        <input placeholder="Enter State.." className="search-bar" type="text" />
+        <input placeholder="&#xF002; Search" className="search-bar" type="text" />
         {/* <input className="home-submit-button" type="submit" value={'<'} />
         <Icon>star</Icon> */}
-        <button className="home-submit-button"> <ArrowForwardIosIcon fontSize={'small'}>ArrowForwardIosIcon </ArrowForwardIosIcon ></button>
+        <button className="home-submit-button"> <ArrowForwardIosIcon style={{ fontSize: '12px' }}>ArrowForwardIosIcon </ArrowForwardIosIcon ></button>
       </form>
       <div className="button-flex-container">
         <button className="browse-all-button">Browse all states</button>
