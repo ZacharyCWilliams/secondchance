@@ -32,15 +32,25 @@
   letter-spacing: 1.3px;
   line-height: normal;
   padding-top: 8.2px;
-  transition: border 0.1s ease-in-out 0s;
-  border-bottom: 1px solid rgba(45, 49, 56, 0.4);
   background-color: transparent;
   margin-right: 28px;
+  cursor: pointer;
 }
 
-.nav-links {
-
+.nav-link:hover {
+  transition: border 0.1s ease-in-out 0s;
+  border-bottom: 1px solid rgba(45, 49, 56, 0.4);
 }
+
+.nav-link:active {
+  border-bottom: 1px solid rgba(45, 49, 56, 0.4);
+  color: red;
+}
+
+/* .nav-link:focus {
+  border-bottom: 1px solid rgba(45, 49, 56, 0.4);
+  color: green;
+} */
 
 .light {
   letter-spacing: 0.72px;
@@ -56,6 +66,10 @@
   cursor: pointer;
   white-space: nowrap;
   margin-right: 10px;
+}
+
+.light:hover {
+  background-color: rgba(45,49,56,0.03);
 }
 
 .button-light:hover {
