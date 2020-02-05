@@ -14,6 +14,7 @@
   font-weight: 800;
   margin-bottom: 20px;
   font-family: "Roboto Slab";
+  padding: 0px 40px;
 }
 
 
@@ -56,16 +57,16 @@
   border-style: none;
   border-color: initial;
   border-image: initial;
-
+  margin-top: 1px;
   /* added */
   outline: 0;
   border: none;
+
 }
 
 .search-bar::placeholder {
   color: rgb(45, 49, 56);
   opacity: 50%;
-  content:
 }
 
 
@@ -109,7 +110,8 @@
 .location-icon {
   align-self: auto;
   background-color: white;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
   padding-top: 13px;
   padding-left: 10px;
+  margin-top: 1px;
 }
