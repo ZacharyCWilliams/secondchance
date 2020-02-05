@@ -1,10 +1,10 @@
 import React from 'react';
 import NavButton from './NavButton';
 
-
-const NavMapper = ({ buttons, links, buttonActions }) => {
+const NavMapper = ({ buttons, links, buttonActions, buttonStyles }) => {
 
   let linksHTML, buttonsHTML = '';
+
 
   if (links) {
     let conditionalStyle = {};
@@ -21,15 +21,16 @@ const NavMapper = ({ buttons, links, buttonActions }) => {
       );
     })
    } else {
-    linksHTML = <div></div>
+     linksHTML = <div></div>
   }
 
   if (buttons) {
     buttonsHTML = buttons.map((button, index) => {
       const buttonAction = buttonActions[index];
+      const buttonStyle = buttonStyles[index];
 
       return (
-        <NavButton text={button} key={index} onClick={buttonAction} />
+        <NavButton text={button} key={index} onClick={buttonAction} style={buttonStyle} />
       );
     })
   } else {

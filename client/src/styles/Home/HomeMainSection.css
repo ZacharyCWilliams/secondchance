@@ -13,6 +13,7 @@
   font-size: 50px;
   font-weight: 800;
   margin-bottom: 20px;
+  font-family: "Roboto Slab";
 }
 
 
@@ -64,7 +65,7 @@
 .search-bar::placeholder {
   color: rgb(45, 49, 56);
   opacity: 50%;
-  content: 
+  content:
 }
 
 

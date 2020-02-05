@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+
+//styles
 import '../styles/NavBar/NavBar.css';
 
 //components
 import NavMapper from '../components/NavMapper';
+
+
 
 class NavBar extends Component {
   constructor(props) {
@@ -13,9 +17,10 @@ class NavBar extends Component {
     const buttons = this.props.buttons;
     const links = this.props.links;
     const buttonActions = this.props.buttonActions;
+    const buttonStyles = this.props.buttonStyles;
 
     return(
-      <NavMapper buttons={buttons} links={links} buttonActions={buttonActions}/>
+      <NavMapper buttons={buttons} links={links} buttonActions={buttonActions} buttonStyles={buttonStyles}/>
     );
 
   }
