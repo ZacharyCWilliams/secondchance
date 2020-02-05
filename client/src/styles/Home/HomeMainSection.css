@@ -49,16 +49,22 @@
   line-height: normal;
   padding-left: 8px;
   padding-right: 8px;
-  padding-top: 16px;
-  padding-bottom: 19px;
+  padding-top: 17px;
+  padding-bottom: 18px;
   border-width: initial;
   border-style: none;
   border-color: initial;
   border-image: initial;
 
-    /* added */
-     outline: 0;
-    border: none;
+  /* added */
+  outline: 0;
+  border: none;
+}
+
+.search-bar::placeholder {
+  color: rgb(45, 49, 56);
+  opacity: 50%;
+  content: 
 }
 
 
@@ -90,4 +96,18 @@
   display: flex;
   align-self: flex-end;
   width: 335px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.location-icon {
+  align-self: auto;
+  background-color: white;
+  margin-bottom: 3px;
+  padding-top: 13px;
+  padding-left: 10px;
 }
