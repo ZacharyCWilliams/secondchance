@@ -14,10 +14,26 @@ function HomeMainSection() {
         ThePenPal, your go to place for messaging inmates
       </p>
       <form className="home-form">
-        <input placeholder="&#xF002; Search" className="search-bar" type="text" />
-        {/* <input className="home-submit-button" type="submit" value={'<'} />
-        <Icon>star</Icon> */}
-        <button className="home-submit-button"> <ArrowForwardIosIcon style={{ fontSize: '12px' }}>ArrowForwardIosIcon </ArrowForwardIosIcon ></button>
+        <div className="search-container">
+          <div className="location-icon">
+            <LocationOnIcon />
+          </div>
+          <div>
+            <input
+              placeholder="Enter State..."
+              className="search-bar"
+              type="text"
+            />
+          </div>
+          <div>
+            <button className="home-submit-button">
+              {" "}
+              <ArrowForwardIosIcon style={{ fontSize: "14px" }}>
+                ArrowForwardIosIcon{" "}
+              </ArrowForwardIosIcon>
+            </button>
+          </div>
+        </div>
       </form>
       <div className="button-flex-container">
         <button className="browse-all-button">Browse all states</button>

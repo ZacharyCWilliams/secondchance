@@ -20,7 +20,12 @@ class HomePage extends Component {
     return (
       <div className="home-container">
         <div className="home-main-div">
-          <NavBar buttons={['Log In', 'Sign Up']} links={['About','Donate', 'Contact']} buttonActions={[this.handleLogIn, this.handleSignUp]} />
+          <NavBar
+            links={['About','Donate', 'Contact']}
+            buttons={['Log In', 'Sign Up']}
+            buttonStyles={['light', 'dark']}
+            buttonActions={[this.handleLogIn, this.handleSignUp]}
+          />
           <HomeMainSection />
         </div>
       </div>
