@@ -6,6 +6,7 @@ import "../styles/Home/HomePage.css";
 //components
 import NavBar from "./NavBar";
 import HomeMainSection from "../components/HomeMainSection";
+import MainContainer from "./MainContainer"
 
 class HomePage extends Component {
   handleLogIn() {
