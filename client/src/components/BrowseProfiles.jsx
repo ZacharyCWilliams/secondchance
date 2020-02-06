@@ -9,109 +9,127 @@ import { render } from "react-dom";
      name: "Sammy Seymore",
      age: 24,
      location: "Santa Rosa, California",
-     gender: "Female"
+     gender: "Female",
+     photos: ["https://i.imgur.com/NEc5Mb1.jpg"]
    },
    {
      name: "Lisa Lacomp",
      age: 31,
      location: "San Jose, California",
-     gender: "Female"
+     gender: "Female",
+     photos: ["https://imgur.com/DLZXW1J.jpg"]
    },
    {
      name: "Franny Frider",
      age: 44,
      location: "Columbus, Ohio",
-     gender: "Female"
+     gender: "Female",
+     photos: ["https://i.imgur.com/SxotJpl.jpg"]
    },
    {
      name: "Lex Aliceson",
      age: 54,
      location: "Austin, Texas",
-     gender: "Female"
+     gender: "Female",
+     photos: ["https://i.imgur.com/cUxkE6r.jpg"]
    },
    {
      name: "Julia Campbell",
      age: 21,
      location: "Miami, Florida",
-     gender: "Female"
+     gender: "Female",
+     photos: ["https://i.imgur.com/R0IpXPi.jpg"]
    },
    {
      name: "Courtney Wisemen",
      age: 19,
      location: "Brooklyn, New York",
-     gender: "Female"
+     gender: "Female",
+     photos: ["https://i.imgur.com/2pZwaEc.jpg"]
    },
    {
      name: "Jessica Callter",
      age: 22,
      location: "Boise, Idaho",
-     gender: "Female"
+     gender: "Female",
+     photos: ["https://i.imgur.com/JWTe2xk.jpg"]
    },
    {
      name: "Lana Lokta",
      age: 28,
      location: "Santa Barbara, California",
-     gender: "Female"
+     gender: "Female",
+     photos: ["https://i.imgur.com/dJd2Rja.jpg"]
    },
    {
      name: "Emily Daniels",
      age: 20,
      location: "Santa Cruz, California",
-     gender: "Female"
+     gender: "Female",
+     photos: ["https://i.imgur.com/JoAShsi.jpg"]
    },
    {
-     name: "Sammy Seymore",
+     name: "Alex Seymore",
      age: 24,
      location: "Santa Rosa, California",
-     gender: "Female"
+     gender: "Male",
+     photos: ["https://i.imgur.com/BQfXkEw.jpg"]
    },
    {
-     name: "Lisa Lacomp",
+     name: "John Lacomp",
      age: 31,
      location: "San Jose, California",
-     gender: "Female"
+     gender: "Male",
+     photos: ["https://i.imgur.com/SVAeq9U.jpg"]
    },
    {
-     name: "Franny Frider",
+     name: "Brad Frider",
      age: 44,
      location: "Columbus, Ohio",
-     gender: "Female"
+     gender: "Male",
+     photos: ["https://i.imgur.com/we76AIL.jpg"]
    },
    {
-     name: "Lex Aliceson",
+     name: "Jimmy Lacktack",
      age: 54,
      location: "Austin, Texas",
-     gender: "Female"
+     gender: "Male",
+     photos: ["https://i.imgur.com/P9MHOqJ.jpg"]
    },
    {
-     name: "Julia Campbell",
+     name: "Cooper Campbell",
      age: 21,
      location: "Miami, Florida",
-     gender: "Female"
+     gender: "Male",
+     photos: ["https://i.imgur.com/QqBA3QI.jpg"]
    },
    {
-     name: "Courtney Wisemen",
+     name: "Jared Wisemen",
      age: 19,
      location: "Brooklyn, New York",
-     gender: "Female"
+     gender: "Male",
+     photos: ["https://i.imgur.com/wBVZ9Aw.jpg"]
    },
    {
-     name: "Jessica Callter",
+     name: "Carter Callter",
      age: 22,
      location: "Boise, Idaho",
-     gender: "Female"
+     gender: "Male",
+     photos: ["https://i.imgur.com/H22xbOJ.jpg"]
    },
    {
      name: "Lana Lokta",
      age: 28,
      location: "Santa Barbara, California",
-     gender: "Female"
+     gender: "Female",
+     photos: ["https://i.imgur.com/3PzIvCm.jpg"]
    },
    {
      name: "Emily Daniels",
      age: 20,
      location: "Santa Cruz, California",
-     gender: "Female"
+     gender: "Female",
+     photos: ["https://i.imgur.com/4bLOI2K.jpg"]
    }
  ];
 
@@ -123,7 +141,7 @@ const mapData = () => {
         <div className="profile-media">
           <img
             className="profile-media"
-            src="https://i.imgur.com/d2nMapp.jpg"
+            src={profile.photos[0]}
             alt="profile-hero-thumb"
           />
         </div>
