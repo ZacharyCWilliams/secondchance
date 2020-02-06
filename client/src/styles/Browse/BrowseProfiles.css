@@ -1,0 +1,75 @@
+.browse-profiles-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0px;
+}
+
+.profile-card {
+  margin: 15px;
+  list-style-type: none;
+  height: 350px;
+  cursor: pointer;
+}
+
+.profile-info-section {
+  font-size: 16px;
+  margin-top: 15px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.profile-media {
+  height: 225px;
+  border-radius: 4px;
+  box-shadow: 3px -3px 9px rgba(0,0,0,0.25), 0 -6px 18px rgba(0,0,0,0.22)
+}
+
+.profile-li {
+  margin-top: 3px;
+  font-size: 20px;
+}
+
+.profile-gender {
+  color: #00CC99;
+  font-weight: 400;
+}
+
+.profile-name {
+  font-weight: 800;
+}
+
+.location-text {
+  height: 50px;
+  width: 800px;
+  display: flex;
+  align-self: center;
+  padding-top: 16px;
+  padding-left: 15px;
+}
+
+.sticky-navbar-container {
+  position: sticky;
+  top: 0;
+  background-color: #F4DCDC;
+  width: 1500px;
+  margin-left: -235px;
+  display: flex;
+  justify-content: center;
+}
+
+.browse-profiles-container {
+  background-color: white;
+}
+
+.location-text-container {
+  position: sticky;
+  top: 83px;
+  width: 1520px;
+  height: 70px;
+  background-color: rgb(255, 255, 255);
+  z-index: 300;
+  border-bottom: 1px solid rgba(217, 219, 224, 0.5);
+  margin-left: -210px;
+  padding-left: 218px;
+}

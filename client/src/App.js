@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import HomePage from "./containers/HomePage";
 import './App.css';
+import BrowseProfiles from "./components/BrowseProfiles";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // async function fetchUsers() {
 //   try {
@@ -29,7 +31,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <HomePage />
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route exact path="/browse">
+              <BrowseProfiles />
+            </Route>
+            {/* will need to change this route */}
+            <Route exact path="/inmate/profile">
+              <BrowseProfiles />  
+              {/* <Inmate /> */}
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }
