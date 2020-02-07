@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const router = express.Router();
 
 //create database connection
@@ -26,9 +26,10 @@ router.get('/api', (req, res) => {
   res.status(200).send({ message: 'server connection live' })
 });
 
-
+require('./routes/auth.routes.js')(app);
 require('./routes/citizen.routes.js')(app);
 require('./routes/inmate.routes.js')(app);
+require('./routes/user.routes.js')(app);
 
 
 
