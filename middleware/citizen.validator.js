@@ -13,11 +13,11 @@ const validator = (requestBody, res) => {
         let noSpaces = parsed.length < 2;
         if (!propValue) {
           return res.status(400).send({
-            message: `name can not be empty`
+            message: `Name can not be empty`
           });
         } else if (noSpaces) {
           return res.status(400).send({
-            message: `please provide first and last name using a space`
+            message: `Please provide first and last name using a space`
           });
         }
         break;

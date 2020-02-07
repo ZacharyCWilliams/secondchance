@@ -1,7 +1,18 @@
 const Inmate = require('../models/inmate.model.js');
+const validateInmate = require('../middleware/inmate.validator');
+const Joi = require('joi');
+
+console.log('something', validateInmate);
 
 //POST METHOD
 exports.create = (req, res) => {
+
+  //validate incoming request with joi
+  const { error } = validateInmate(req.body);
+  if (error) {
+    res.status(400).send(error.details[0].message);
+    return;
+  }
 
   //create new inmate
   const inmate = new Inmate({
@@ -53,15 +64,7 @@ exports.findOne = (req, res) => {
 
 
 //GET ALL INMATES METHOD
-exports.findAll = (req, res) => {
-
-  Inmate.find()
-    .then(inmates => {
-      res.send(inmates);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Some error occurred while retrieving inmates."
-      });
-    });
-
+exports.findAll = async (req, res) => {
+  const inmates = await Inmate.find();
+  res.send(inmates);
 };
