@@ -1,8 +1,14 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const router = express.Router();
+const config = require('config');
+
+if (!config.get('jwtPrivateKey')) {
+  console.error('FATAL ERROR: jwtPrivateKey is not defined.');
+  process.exit(1);
+}
 
 //create database connection
 const mongoURL = `mongodb://guest:guest123@cluster0-shard-00-00-iwrit.mongodb.net:27017,cluster0-shard-00-01-iwrit.mongodb.net:27017,cluster0-shard-00-02-iwrit.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority`;
@@ -26,9 +32,10 @@ router.get('/api', (req, res) => {
   res.status(200).send({ message: 'server connection live' })
 });
 
-
+require('./routes/auth.routes.js')(app);
 require('./routes/citizen.routes.js')(app);
 require('./routes/inmate.routes.js')(app);
+require('./routes/user.routes.js')(app);
 
 
 
