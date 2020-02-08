@@ -1,4 +1,6 @@
 const _ = require('lodash');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 const User = require('../models/user.model.js');
 const validateUser = require('../middleware/user.validator');
 const bcrypt = require('bcrypt');
@@ -12,21 +14,14 @@ exports.create = async (req, res) => {
   let user = await User.findOne({email: req.body.email});
   if (user) return res.status(400).send('User already registered');
 
-  // reassign user variable to contain our new User
-  // user = new User({
-  //   username: req.body.username || 'untitled',
-  //   email: req.body.email,
-  //   password: req.body.password,
-  // });
-
   user = new User(_.pick(req.body, ['username', 'email', 'password']))
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);
   //save the new user
   await user.save();
 
-  //pick returns new object with only properties passed
-  res.send(_.pick(user, ['_id', 'username', 'email']));
+  const token = user.generateAuthToken();
+  res.header('x-auth-token',token).send(_.pick(user, ['_id', 'username', 'email']));
 };
 
 exports.findOne = async (req, res) => {
