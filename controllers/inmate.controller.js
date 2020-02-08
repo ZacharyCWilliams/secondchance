@@ -6,7 +6,6 @@ console.log('something', validateInmate);
 
 //POST METHOD
 exports.create = (req, res) => {
-
   //validate incoming request with joi
   const { error } = validateInmate(req.body);
   if (error) {

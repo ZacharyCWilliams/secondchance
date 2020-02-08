@@ -3,8 +3,8 @@ const User = require('../models/user.model.js');
 const validateAuth = require('../middleware/auth.validator');
 const bcrypt = require('bcrypt');
 
+
 exports.create = async (req, res) => {
-  console.log('comment')
   //validates req.body for all required properties
   const { error } = validateAuth(req.body);
   if (error) return res.status(400).send(error.details[0].message);
@@ -17,8 +17,8 @@ exports.create = async (req, res) => {
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   if (!validPassword) return res.status(400).send('Invalid password');
 
-  res.send(true);
-
+  const token = user.generateAuthToken();
+  res.send(token);
 };
 
 
