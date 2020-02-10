@@ -1,12 +1,28 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "../styles/Home/HomeMainSection.css";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
-function HomeMainSection() {
+
+
+function HomeMainSection(props) {
+  const { showModal } = props;
+  const {modalState, setModalState} = useState(props.showModal);
+  const {searchBarStyle, setSearchBarStyle} = useState({display: 'hidden'});
+
+  //when showModal props change refresh HomeMainSection component based on that
+  useEffect(() => {
+    console.log('refresh');
+  }, [showModal]);
+
+  if (modalState) {
+    setSearchBarStyle({display: 'block'})
+  }
+
 
   return (
     <section className="home-text-section">
+      {console.log(modalState, 'modalState', 'searchbarstyle', searchBarStyle)}
       <h1 className="home-h1">
         Build a connection with those who need it most.
       </h1>
@@ -18,18 +34,19 @@ function HomeMainSection() {
           <div className="location-icon">
             <LocationOnIcon />
           </div>
+
           <div>
             <input
               placeholder="Enter State..."
               className="search-bar"
               type="text"
+              style={searchBarStyle}
             />
           </div>
           <div>
             <button className="home-submit-button">
-              {" "}
               <ArrowForwardIosIcon style={{ fontSize: "14px" }}>
-                ArrowForwardIosIcon{" "}
+                ArrowForwardIosIcon
               </ArrowForwardIosIcon>
             </button>
           </div>

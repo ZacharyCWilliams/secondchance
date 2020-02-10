@@ -1,7 +1,7 @@
 const Citizen = require('../models/citizen.model.js');
-const validator = require('../middleware/citizen.validator');
+const validator = require('./citizen.validator');
 
-exports.create = (req, res) => {
+exports.create = async (req, res) => {
 
   //validates req.body for all required properties
   validator(req.body, res);
@@ -15,36 +15,18 @@ exports.create = (req, res) => {
   });
 
   //save the new citizen
-
-  citizen.save()
-    .then(data => {
-      res.send(data);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Some error occurred while creating the Citizen."
-      });
-    });
+  await citizen.save();
 };
 
-exports.findOne = (req, res) => {
-  Citizen.findById(req.params.citizenId)
-    .then(citizen => {
-      if (!citizen) {
-        return res.status(404).send({
-          message: "Citizen not found with id " + req.params.citizenId
-        });
-      }
-      res.send(citizen);
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "Citizen not found with id " + req.params.citizenId
-        });
-      }
-      return res.status(500).send({
-        message: "Error retrieving citizen with id " + req.params.citizenId
-      });
-    });
+exports.findOne = async (req, res) => {
+  let citizen = await Citizen.findById(req.params.citizenId);
+  res.send(citizen);
 };
+
+exports.findAll = async (req, res) => {
+  const citizens = await Citizen.find();
+  res.send(citizens);
+};
+
 
 
