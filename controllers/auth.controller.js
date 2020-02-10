@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const User = require('../models/user.model.js');
-const validateAuth = require('../middleware/auth.validator');
+const validateAuth = require('./auth.validator');
 const bcrypt = require('bcrypt');
 
 

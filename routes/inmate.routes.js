@@ -1,12 +1,12 @@
 module.exports = (app) => {
   const inmates = require('../controllers/inmate.controller.js');
+  const auth = require('../middleware/auth');
 
-  // Create a new inmate
-  app.post('/inmates', inmates.create);
+  app.post('/api/inmates', auth, inmates.create);
 
-  // Get a single inmate
-  app.get('/inmates/:inmateId', inmates.findOne);
+  //Get a single inmate
+  app.get('/api/inmates/:inmateId', inmates.findOne);
 
   // Get all inmates
-  app.get('/inmates', inmates.findAll);
+  app.get('/api/inmates', inmates.findAll);
 }

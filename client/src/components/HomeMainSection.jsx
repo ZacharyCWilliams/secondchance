@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "../styles/Home/HomeMainSection.css";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
-function HomeMainSection() {
+
+
+function HomeMainSection(props) {
 
   return (
     <section className="home-text-section">
@@ -18,18 +20,19 @@ function HomeMainSection() {
           <div className="location-icon">
             <LocationOnIcon />
           </div>
+
           <div>
             <input
               placeholder="Enter State..."
               className="search-bar"
               type="text"
+
             />
           </div>
           <div>
             <button className="home-submit-button">
-              {" "}
               <ArrowForwardIosIcon style={{ fontSize: "14px" }}>
-                ArrowForwardIosIcon{" "}
+                ArrowForwardIosIcon
               </ArrowForwardIosIcon>
             </button>
           </div>

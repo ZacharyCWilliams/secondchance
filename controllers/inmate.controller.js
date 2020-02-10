@@ -1,8 +1,6 @@
 const Inmate = require('../models/inmate.model.js');
-const validateInmate = require('../middleware/inmate.validator');
+const validateInmate = require('./inmate.validator');
 const Joi = require('joi');
-
-console.log('something', validateInmate);
 
 //POST METHOD
 exports.create = (req, res) => {
@@ -36,6 +34,7 @@ exports.create = (req, res) => {
         message: err.message || "Some error occurred while creating the inmate."
       });
     });
+
 };
 
 
