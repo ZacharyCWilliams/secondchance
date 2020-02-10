@@ -6,23 +6,9 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 
 function HomeMainSection(props) {
-  const { showModal } = props;
-  const {modalState, setModalState} = useState(props.showModal);
-  const {searchBarStyle, setSearchBarStyle} = useState({display: 'hidden'});
-
-  //when showModal props change refresh HomeMainSection component based on that
-  useEffect(() => {
-    console.log('refresh');
-  }, [showModal]);
-
-  if (modalState) {
-    setSearchBarStyle({display: 'block'})
-  }
-
 
   return (
     <section className="home-text-section">
-      {console.log(modalState, 'modalState', 'searchbarstyle', searchBarStyle)}
       <h1 className="home-h1">
         Build a connection with those who need it most.
       </h1>
@@ -40,7 +26,7 @@ function HomeMainSection(props) {
               placeholder="Enter State..."
               className="search-bar"
               type="text"
-              style={searchBarStyle}
+
             />
           </div>
           <div>
