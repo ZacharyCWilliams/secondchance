@@ -2,7 +2,7 @@ const _ = require('lodash');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const User = require('../models/user.model.js');
-const validateUser = require('../middleware/user.validator');
+const validateUser = require('./user.validator');
 const bcrypt = require('bcrypt');
 
 exports.create = async (req, res) => {
