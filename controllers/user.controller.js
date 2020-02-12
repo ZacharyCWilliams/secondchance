@@ -12,7 +12,12 @@ const Joi = require('joi');
 exports.create = async (req, res) => {
   //validates req.body for all required properties
   const { error } = validateUser(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+
+  if (error) {
+    console.log('im error',error.details[0].message);
+    return res.status(400).send(error.details[0].message);
+  }
+
 
   //see if user already exists
   let user = await User.findOne({email: req.body.email});
