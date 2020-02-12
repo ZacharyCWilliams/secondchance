@@ -71,3 +71,9 @@
   padding: 20px 0px;
   outline: none;
 }
+
+.modal-form-input:focus-within {
+  /* border-bottom: #F4DCDC solid 2px; */
+  border-bottom: 2px solid #ec2d90;
+  /* transition: ease 5ms; */
+}

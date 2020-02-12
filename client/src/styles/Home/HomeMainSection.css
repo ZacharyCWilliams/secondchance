@@ -65,8 +65,7 @@
 }
 
 .search-bar::placeholder {
-  color: rgb(45, 49, 56);
-  opacity: 50%;
+  color: rgb(164, 164, 164);
 }
 
 
