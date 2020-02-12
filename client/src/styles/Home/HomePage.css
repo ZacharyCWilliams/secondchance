@@ -73,7 +73,17 @@
 }
 
 .modal-form-input:focus-within {
-  /* border-bottom: #F4DCDC solid 2px; */
   border-bottom: 2px solid #ec2d90;
-  /* transition: ease 5ms; */
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1500px;
+  height: 100%;
+  background: white;
+  z-index: 1100;
+  opacity: 65%;
+  z-index: 0;
 }
