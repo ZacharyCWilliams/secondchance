@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import HomePage from "./containers/HomePage";
 import './App.css';
 import BrowseProfiles from "./components/BrowseProfiles";
+import Inmate from './components/Profiles/Inmate'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // async function fetchUsers() {
@@ -41,8 +42,7 @@ class App extends Component {
             </Route>
             {/* will need to change this route */}
             <Route exact path="/inmate/profile">
-              <BrowseProfiles />  
-              {/* <Inmate /> */}
+              <Inmate />
             </Route>
           </Switch>
         </Router>
