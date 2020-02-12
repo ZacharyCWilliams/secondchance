@@ -40,6 +40,7 @@ exports.create = (req, res) => {
 
 //GET SINGLE INMATE METHOD
 exports.findOne = (req, res) => {
+  console.log(req.params)
   Inmate.findById(req.params.inmateId)
     .then(inmate => {
       if (!inmate) {

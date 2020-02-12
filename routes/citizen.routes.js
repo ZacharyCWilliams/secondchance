@@ -1,5 +1,7 @@
 module.exports = (app) => {
   const citizens = require('../controllers/citizen.controller.js');
+  const auth = require('../middleware/auth');
+
 
   // Create a new citizen
   app.post('/api/citizens', citizens.create);

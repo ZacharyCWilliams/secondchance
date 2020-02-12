@@ -5,10 +5,12 @@ const mongoose = require('mongoose');
 const router = express.Router();
 const config = require('config');
 
+//run this command to store key in env variable => export penpal_jwtPrivateKey=mySecureKey
 if (!config.get('jwtPrivateKey')) {
   console.error('FATAL ERROR: jwtPrivateKey is not defined.');
   process.exit(1);
 }
+
 
 //create database connection
 const mongoURL = `mongodb://guest:guest123@cluster0-shard-00-00-iwrit.mongodb.net:27017,cluster0-shard-00-01-iwrit.mongodb.net:27017,cluster0-shard-00-02-iwrit.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority`;
