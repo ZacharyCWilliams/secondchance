@@ -1,7 +1,8 @@
 const _ = require('lodash');
 const User = require('../models/user.model.js');
-const validateAuth = require('./auth.validator');
+// const validateAuth = require('./auth.validator');
 const bcrypt = require('bcrypt');
+const Joi = require('joi');
 
 
 exports.create = async (req, res) => {
@@ -20,5 +21,15 @@ exports.create = async (req, res) => {
   const token = user.generateAuthToken();
   res.send(token);
 };
+
+
+function validateAuth(req) {
+  const schema = {
+    email: Joi.string().min(5).max(255).required().email(),
+    password: Joi.string().min(5).max(255).required()
+  }
+
+  return Joi.validate(req, schema);
+}
 
 
