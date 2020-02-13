@@ -3,6 +3,7 @@ import HomePage from "./containers/HomePage";
 import './App.css';
 import BrowseProfiles from "./components/BrowseProfiles";
 import Inmate from './components/Profiles/Inmate'
+import CitizenForm from './components/Profiles/CitizenForm'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // async function fetchUsers() {
@@ -43,6 +44,9 @@ class App extends Component {
             {/* will need to change this route */}
             <Route exact path="/inmate/profile">
               <Inmate />
+            </Route>
+            <Route exact path="/citizen/form">
+              <CitizenForm />
             </Route>
           </Switch>
         </Router>

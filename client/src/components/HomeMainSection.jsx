@@ -20,13 +20,11 @@ function HomeMainSection(props) {
           <div className="location-icon">
             <LocationOnIcon />
           </div>
-
           <div>
             <input
               placeholder="Enter State..."
               className="search-bar"
               type="text"
-
             />
           </div>
           <div>

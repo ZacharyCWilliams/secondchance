@@ -87,3 +87,33 @@
   opacity: 65%;
   z-index: 0;
 }
+
+.signup-button {
+  margin-top: 30px;
+  margin-bottom: -25px;
+  cursor: pointer;
+  text-align: center;
+  background-color: rgb(217, 219, 224);
+  color: rgb(255, 255, 255);
+  font-family: PostmatesStd, "Helvetica Neue", Helvetica;
+  font-size: 14px;
+  letter-spacing: initial;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: normal;
+  height: 48px;
+  width: 100%;
+  padding: 0px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  outline: none;
+  transition: background-color 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s;
+  border-radius: 28px;
+}
+
+.signup-button:hover {
+  color: rgb(255, 255, 255);
+  background-color: #ec2d90;
+}
