@@ -6,8 +6,6 @@ import '../styles/NavBar/NavBar.css';
 //components
 import NavMapper from '../components/NavMapper';
 
-
-
 class NavBar extends Component {
   constructor(props) {
     super(props);
