@@ -6,14 +6,8 @@ import "../styles/Home/HomePage.css";
 //components
 import NavBar from "./NavBar";
 import HomeMainSection from "../components/HomeMainSection";
-import MainContainer from "./MainContainer"
 import Modal from "../components/Modal";
 
-
-// function registerUser() {
-//   const [showModal, setShowModal] = useState(false);
-//   console.log('register user')
-// }
 
 class HomePage extends Component {
 
@@ -21,7 +15,7 @@ class HomePage extends Component {
     super(props);
 
     this.state = {
-      showModal : false
+      showModal: false
     }
 
     this.handleSignUp = this.handleSignUp.bind(this);
@@ -41,16 +35,16 @@ class HomePage extends Component {
   handleSignUp() {
     console.log('sign up');
     const { showModal } = this.state;
-    this.setState({showModal: !showModal});
+    this.setState({ showModal: !showModal });
   }
 
-  render(){
-    const {showModal} = this.state;
+  render() {
+    const { showModal } = this.state;
     return (
       <>
         <div className="home-container">
           <div className="home-main-div">
-            {showModal ? <Modal onClick={this.handleExitClick}/> : <></> }
+            {showModal ? <Modal onClick={this.handleExitClick} /> : <></>}
             <NavBar
               links={['About', 'Donate', 'Contact']}
               buttons={['Log In', 'Sign Up']}
@@ -64,8 +58,4 @@ class HomePage extends Component {
     );
   }
 }
-
-
 export default HomePage;
-
-

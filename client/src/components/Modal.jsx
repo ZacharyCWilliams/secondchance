@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 import { useHistory, Redirect } from "react-router-dom";
@@ -9,12 +9,12 @@ const registerUser = async (username, email, password) => {
     const res = await axios.post('/api/users', { username: username, email: email, password: password });
     if (res.status === 200) {
       console.log(res);
-      return { serverResponse: true};
+      return { serverResponse: true };
     };
   } catch (error) {
     console.log(error.response);
     let errorMessage = error.response.data;
-    return {error: errorMessage, serverResponse: false};
+    return { error: errorMessage, serverResponse: false };
   }
 }
 
@@ -49,7 +49,7 @@ const Modal = (props) => {
     if (!serverResponse) {
       setUserRegisterStatus(error);
     } else if (serverResponse) {
-      setTimeout(()=> {
+      setTimeout(() => {
         redirectToBrowsePage();
       }, 1000);
       setUserRegisterStatus("User created successfully!");
@@ -60,7 +60,7 @@ const Modal = (props) => {
     <div className="modal">
       <div className="modal-header-section">
         <div className="modal-exit-button">
-          <button style={{background: 'red'}} onClick={props.onClick}>X</button>
+          <button style={{ background: 'red' }} onClick={props.onClick}>X</button>
         </div>
         <h1 className="modal-title">Sign Up</h1>
       </div>
@@ -76,7 +76,4 @@ const Modal = (props) => {
     </div>
   )
 }
-
 export default Modal;
-
-

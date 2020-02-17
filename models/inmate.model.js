@@ -1,6 +1,26 @@
-const mongoose = require("mongoose");
 
-const InmateSchema = mongoose.Schema({
+const mongoose = require("mongoose");
+const Joi = require('joi');
+const Schema = mongoose.Schema;
+
+function validateInmate(inmate) {
+  const schema = {
+    name: Joi.string().min(3).required(),
+    dob: Joi.string().required(),
+    gender: Joi.string().required(),
+    orientation: Joi.string().required(),
+    location: Joi.string().required(),
+    about: Joi.string().required(),
+    interests: Joi.string().required(),
+    goals: Joi.string().required(),
+    inc_date: Joi.string().required(),
+    charges: Joi.string().required()
+  }
+
+  return Joi.validate(inmate, schema);
+}
+
+const inmateSchema = Schema({
   name: { type: String, required: true },
   dob: { type: String, required: true },
   gender: { type: String, required: true },
@@ -15,4 +35,9 @@ const InmateSchema = mongoose.Schema({
   timestamps: true
 });
 
-module.exports = mongoose.model('Inmate', InmateSchema);
+const Inmate = mongoose.model('Inmate', inmateSchema);
+
+exports.Inmate = Inmate;
+exports.validateInmate = validateInmate;
+
+
