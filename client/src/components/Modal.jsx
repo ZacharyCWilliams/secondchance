@@ -10,12 +10,12 @@ const registerUser = async (username, email, password) => {
     const res = await axios.post('/api/users', { username: username, email: email, password: password });
     if (res.status === 200) {
       console.log(res);
-      return { serverResponse: true};
+      return { serverResponse: true };
     };
   } catch (error) {
     console.log(error.response);
     let errorMessage = error.response.data;
-    return {error: errorMessage, serverResponse: false};
+    return { error: errorMessage, serverResponse: false };
   }
 }
 
@@ -50,7 +50,7 @@ const Modal = (props) => {
     if (!serverResponse) {
       setUserRegisterStatus(error);
     } else if (serverResponse) {
-      setTimeout(()=> {
+      setTimeout(() => {
         redirectToBrowsePage();
       }, 1000);
       setUserRegisterStatus("User created successfully!");
@@ -80,7 +80,4 @@ const Modal = (props) => {
     </div>
   )
 }
-
 export default Modal;
-
-

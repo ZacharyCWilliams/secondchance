@@ -5,36 +5,24 @@ import BrowseProfiles from "./components/BrowseProfiles";
 import Inmate from './components/Profiles/Inmate'
 import CitizenForm from './components/Profiles/CitizenForm'
 import EnterSite from './components/EnterSite/EnterSite';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
-// async function fetchUsers() {
-//   try {
-//     const res = await fetch('/api/hello');
-//     const json = await res.json();
-//     console.log( json );
-//   }
-//   catch (error) { console.log(error) }
-// };
+class NotFound extends Component {
+  render() {
+    return(
+      <div><h1>404, Page Not Found</h1></div>
+    )
+  }
+}
 
 class App extends Component {
   constructor(props) {
     super(props)
   }
 
-  fetchUsers = () => {
-    fetch('/api')
-      .then(res => res.json())
-      .then(results => console.log(results));
-  }
-
-  componentDidMount() {
-    this.fetchUsers();
-  }
-
   render() {
     return (
       <div className="App light-mode">
-        <Router>
           <Switch>
             <Route exact path="/">
               <HomePage />
@@ -53,7 +41,6 @@ class App extends Component {
               <EnterSite />
             </Route>
           </Switch>
-        </Router>
       </div>
     );
   }
