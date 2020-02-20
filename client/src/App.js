@@ -4,6 +4,7 @@ import './App.css';
 import BrowseProfiles from "./components/BrowseProfiles";
 import Inmate from './components/Profiles/Inmate'
 import CitizenForm from './components/Profiles/CitizenForm'
+import EnterSite from './components/EnterSite/EnterSite';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // async function fetchUsers() {
@@ -32,7 +33,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App light-mode">
         <Router>
           <Switch>
             <Route exact path="/">
@@ -47,6 +48,9 @@ class App extends Component {
             </Route>
             <Route exact path="/citizen/form">
               <CitizenForm />
+            </Route>
+            <Route exact path="/enter">
+              <EnterSite />
             </Route>
           </Switch>
         </Router>

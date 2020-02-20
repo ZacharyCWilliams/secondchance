@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import FormName from './FormName';
-import FormAge from './FormAge'
-import FormLocation from './FormLocation'
+import FormAge from './FormAge';
+import FormLocation from './FormLocation';
+import FormGender from './FormGender';
 // import moduleName from 'material-ui/styles/'
 
 class CitizenForm extends Component {
@@ -24,11 +25,13 @@ class CitizenForm extends Component {
   nextStep = () => {
     const { step } = this.state;
     this.setState({ step: step + 1 });
+    console.log(this.state)
   }
 
   prevStep = () => {
     const { step } = this.state;
     this.setState({ step: step - 1 });
+    console.log(this.state)
   }
 
   // edit profile attributes
@@ -76,6 +79,23 @@ class CitizenForm extends Component {
               handleChange={this.handleChange}
               values={values}
             />
+          </div>
+        );
+      case 4: 
+        return (
+          <div>
+            <FormGender
+              prevStep={this.prevStep}
+              nextStep={this.nextStep}
+              handleChange={this.handleChange}
+              values={values}
+            />
+          </div>
+        );
+      case 5: 
+        return (
+          <div>
+            <h1>Photo Upload</h1>
           </div>
         );
     }

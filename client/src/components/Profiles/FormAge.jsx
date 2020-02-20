@@ -25,7 +25,10 @@ class FormAge extends Component {
   render() {
 
     const MyButton = styled(Button)({
-      background: "#ec2d90"
+      background: "#ec2d90",
+      "&:hover": {
+        background: "#9f3054"
+      }
     });
 
     // const MyTextField = styled(TextField)({
