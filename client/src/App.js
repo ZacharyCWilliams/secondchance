@@ -1,186 +1,132 @@
-import React, { Component } from 'react';
-import './App.css';
-<<<<<<< HEAD
-import { Switch, Route, Redirect, Link } from 'react-router-dom';
-import LoadApp from './components/LoadApp';
-||||||| merged common ancestors
-import BrowseProfiles from "./components/BrowseProfiles";
-import Inmate from './components/Profiles/Inmate'
-import { Switch, Route, Redirect } from "react-router-dom";
-=======
-import EnterApp from './components/EnterSite/EnterApp'
-import BrowseProfiles from "./components/BrowseProfiles";
-import Inmate from './components/Profiles/Inmate'
-import CitizenForm from './components/Profiles/CitizenForm'
-import EnterSite from './components/EnterSite/EnterSite';
-import { Switch, Route, Redirect } from "react-router-dom";
->>>>>>> dd127aefa7391ac342872139b6a5c420aa31f885
+import React, { Component, useEffect } from "react";
+import "./App.css";
+import { Switch, Route, Redirect, Link } from "react-router-dom";
+import HomePage from "./containers/HomePage";
 
-class LoginPage extends React.Component {
-  state = {
-    redirectToReferrer: false,
-    email: '',
-    password: ''
-  }
+import EnterApp from "./components/EnterSite/EnterApp";
 
-  login = (email, password) => {
-    let boola = false;
+// class LoginPage extends React.Component {
+//     state = {
+//         redirectToReferrer: false,
+//         email: "",
+//         password: ""
+//     };
 
-    if (email === 'email' && password === 'password') {
-      boola = true;
-    }
+//     login = (email, password) => {
+//         let boola = false;
 
-    //check auth here from server
-    if (boola) {
-      auth.authenticate(() => {
-        this.setState(() => ({
-          redirectToReferrer: true
-        }))
-      })
-    }
-  }
+//         if (email === "email" && password === "password") {
+//             boola = true;
+//         }
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-    this.login(this.state.email, this.state.password);
-  }
+//         //check auth here from server
+//         if (boola) {
+//             auth.authenticate(() => {
+//                 this.setState(() => ({
+//                     redirectToReferrer: true
+//                 }));
+//             });
+//         }
+//     };
 
+//     onSubmit = e => {
+//         e.preventDefault();
+//         this.login(this.state.email, this.state.password);
+//     };
 
-  componentDidMount() {
-    this.login();
-  }
+//     componentDidMount() {
+//         this.login();
+//     }
 
+//     handleChange = e => {
+//         e.target.name === "email"
+//             ? this.setState({ email: e.target.value })
+//             : this.setState({ password: e.target.value });
+//     };
 
-  handleChange = (e) => {
-    e.target.name === "email"
-      ? this.setState({ email: e.target.value })
-      : this.setState({ password: e.target.value })
-  }
+//     render() {
+//         const { redirectToReferrer, email, password } = this.state;
+//         console.log(auth.isAuthenticated);
+//         if (redirectToReferrer === true) {
+//             return <Redirect to="/home" />;
+//         }
 
-  render() {
-    const { redirectToReferrer, email, password } = this.state
-    console.log(auth.isAuthenticated);
-    if (redirectToReferrer === true) {
-      return <Redirect to='/home' />
-    }
+//         return (
+//             <>
+//                 <ul>
+//                     {/*  /home is proteected routed */}
+//                     <li>
+//                         <Link to="/home"> Home Page</Link>
+//                     </li>
+//                 </ul>
+//                 <div>
+//                     <form onSubmit={this.handleSubmit}>
+//                         <input
+//                             type="text"
+//                             name="email"
+//                             placeholder="type email"
+//                             value={email}
+//                             onChange={this.handleChange}
+//                         />
+//                         <input
+//                             type="text"
+//                             name="password"
+//                             placeholder="type password"
+//                             value={password}
+//                             onChange={this.handleChange}
+//                         />
+//                         <input type="submit" value="Submit" />
+//                     </form>
 
-    return (
-<<<<<<< HEAD
-      <>
-        <ul>
-          {/*  /home is proteected routed */}
-          <li><Link to="/home"> Home Page</Link></li>
-        </ul>
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <input type="text"
-              name="email"
-              placeholder="type email"
-              value={email}
-              onChange={this.handleChange}
-            />
-            <input type="text"
-              name="password"
-              placeholder="type password"
-              value={password}
-              onChange={this.handleChange}
-            />
-            <input type="submit" value="Submit" />
-          </form>
-
-          <p>You must log in to view the page</p>
-
-        </div>
-      </>
-    )
-||||||| merged common ancestors
-      <div className="App">
-
-          <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/browse">
-              <BrowseProfiles />
-            </Route>
-            {/* will need to change this route */}
-            <Route exact path="/inmate/profile">
-              <Inmate />
-            </Route>
-            <Route exact path="/not-found">
-                <NotFound />
-            </Route>
-            <Redirect from="*" to="/not-found" />
-          </Switch>
-
-      </div>
-    );
-=======
-      <div className="App light-mode">
-          <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/browse">
-              <BrowseProfiles />
-            </Route>
-            {/* will need to change this route */}
-            <Route exact path="/inmate/profile">
-              <Inmate />
-            </Route>
-            <Route exact path="/citizen/form">
-              <CitizenForm />
-            </Route>
-            <Route exact path="/enter">
-              <EnterSite />
-            </Route>
-            <Route exact path="/enter/app">
-              <EnterApp />
-            </Route>
-          </Switch>
-      </div>
-    );
->>>>>>> dd127aefa7391ac342872139b6a5c420aa31f885
-  }
-}
-
-// const HomePage = () => {
-//   console.log(auth.isAuthenticated);
-//   return <div>Real Application</div>
+//                     <p>You must log in to view the page</p>
+//                 </div>
+//             </>
+//         );
+//     }
 // }
 
-const auth = {
+const localStorageKey = localStorage.getItem("token");
 
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100)
-  },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
-  }
-}
+export const auth = {
+    isAuthenticated: localStorageKey ? true : false,
+    authenticate() {
+        this.isAuthenticated = true;
+        console.log("authenticated successfully");
+    },
+    signout() {
+        this.isAuthenticated = false;
+        // setTimeout(cb, 100);
+    }
+};
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={(props) => (
-    auth.isAuthenticated === true
-      ? <Component {...props} />
-      : <Redirect to='/login' />
-  )} />
-)
+    <Route
+        {...rest}
+        render={props =>
+            auth.isAuthenticated === true ? (
+                <Component {...props} />
+            ) : (
+                <Redirect to="/login" />
+            )
+        }
+    />
+);
 
 function App() {
-  return (
-    <div className="App">
-      <Switch>
-        <Route exact path="/login" component={LoginPage} />
-        <PrivateRoute path='/home' component={LoadApp} />
-        {auth.isAuthorized ? <Redirect to="/home" /> : <Redirect to="/login" />}
-      </Switch>
-    </div>
-  );
-}
+    return (
+        <div className="App">
+            <Switch>
+                <PrivateRoute exact path="/home" component={HomePage} />
+                <Route exact path="/login" component={EnterApp} />
 
+                {auth.isAuthorized ? (
+                    <Redirect to="/home" />
+                ) : (
+                    <Redirect to="/login" />
+                )}
+            </Switch>
+        </div>
+    );
+}
 
 export default App;
