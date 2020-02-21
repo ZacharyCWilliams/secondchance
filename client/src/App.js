@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HomePage from "./containers/HomePage";
 import './App.css';
+import EnterApp from './components/EnterSite/EnterApp'
 import BrowseProfiles from "./components/BrowseProfiles";
 import Inmate from './components/Profiles/Inmate'
 import CitizenForm from './components/Profiles/CitizenForm'
@@ -39,6 +40,9 @@ class App extends Component {
             </Route>
             <Route exact path="/enter">
               <EnterSite />
+            </Route>
+            <Route exact path="/enter/app">
+              <EnterApp />
             </Route>
           </Switch>
       </div>
