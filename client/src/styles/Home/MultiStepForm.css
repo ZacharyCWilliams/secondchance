@@ -1,0 +1,12 @@
+.signup-multi-step-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 435px;
+  height: 250px;
+  max-height: 640px;
+  box-shadow: rgba(34, 34, 34, 0.15) 0px 2px 20px 0px;
+  background-color: rgb(255, 255, 255);
+}

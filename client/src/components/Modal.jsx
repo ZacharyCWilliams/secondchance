@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import ModalOverlay from "./ModalOverlay"
+import React, {useState} from 'react';
 import axios from 'axios';
 
 import { useHistory, Redirect } from "react-router-dom";
@@ -57,21 +58,24 @@ const Modal = (props) => {
   }
 
   return (
-    <div className="modal">
-      <div className="modal-header-section">
-        <div className="modal-exit-button">
-          <button style={{ background: 'red' }} onClick={props.onClick}>X</button>
+    <div>
+      <ModalOverlay />
+      <div className="modal">
+        <div className="modal-header-section">
+          <div className="modal-exit-button">
+            <button style={{background: 'red'}} onClick={props.onClick}>X</button>
+          </div>
+          <h1 className="modal-title">Sign Up</h1>
         </div>
-        <h1 className="modal-title">Sign Up</h1>
-      </div>
-      <div className="modal-form-container">
-        <form className="modal-form" onSubmit={onSubmit}>
-          {userRegisterStatus ? <span><p>{userRegisterStatus}</p></span> : <> </>}
-          <input type="text" name="username" username="username" value={username} className="modal-form-input" placeholder="username" onChange={handleUsername} />
-          <input type="text" name="email" email="email" className="modal-form-input" placeholder="email address" onChange={handleEmail} />
-          <input type="text" name="password" password="password" className="modal-form-input" placeholder="password" onChange={handlePassword} />
-          <button type="submit">Submit</button>
-        </form>
+        <div className="modal-form-container">
+          <form className="modal-form" onSubmit={onSubmit}>
+            {userRegisterStatus ? <span><p>{userRegisterStatus}</p></span> : <> </>}
+            <input type="text" name="username" username="username" value={username} className="modal-form-input" placeholder="username" onChange={handleUsername} />
+            <input type="text" name="email" email="email" className="modal-form-input" placeholder="email address" onChange={handleEmail} />
+            <input type="text" name="password" password="password" className="modal-form-input" placeholder="password" onChange={handlePassword} />
+            <button className="signup-button" type="submit">SIGN UP</button>
+          </form>
+        </div>
       </div>
     </div>
   )
