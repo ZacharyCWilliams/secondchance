@@ -5,9 +5,27 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { useHistory } from "react-router-dom";
 
 function HomeMainSection(props) {
+    const [locationSearchInput, setLocationSearchInput] = useState("");
     const history = useHistory();
-    const handleClick = () => {
-        history.push("/browse");
+
+    const handleClick = e => {
+        if (e.target.name === "browse-button") {
+            history.push({
+                pathname: "/browse",
+                state: { input: "all" }
+            });
+        }
+
+        if (e.target.name === "state-search-button") {
+            history.push({
+                pathname: "/browse",
+                state: { input: locationSearchInput }
+            });
+        }
+    };
+
+    const handleChange = e => {
+        setLocationSearchInput(e.target.value);
     };
 
     return (
@@ -27,10 +45,16 @@ function HomeMainSection(props) {
                             placeholder="Enter State..."
                             className="search-bar"
                             type="text"
+                            value={locationSearchInput}
+                            onChange={handleChange}
                         />
                     </div>
                     <div>
-                        <button className="home-submit-button">
+                        <button
+                            name="state-search-button"
+                            className="home-submit-button"
+                            onClick={handleClick}
+                        >
                             <ArrowForwardIosIcon style={{ fontSize: "14px" }}>
                                 ArrowForwardIosIcon
                             </ArrowForwardIosIcon>
@@ -39,7 +63,11 @@ function HomeMainSection(props) {
                 </div>
             </form>
             <div className="button-flex-container">
-                <button className="browse-all-button" onClick={handleClick}>
+                <button
+                    name="browse-button"
+                    className="browse-all-button"
+                    onClick={handleClick}
+                >
                     Browse all states
                 </button>
             </div>
