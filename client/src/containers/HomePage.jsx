@@ -15,26 +15,22 @@ class HomePage extends Component {
         this.state = {
             showModal: false
         };
-
-        this.handleSignUp = this.handleSignUp.bind(this);
-        this.handleLogIn = this.handleLogIn.bind(this);
-        this.handleExitClick = this.handleExitClick.bind(this);
     }
 
-    handleLogIn() {
+    handleLogIn = () => {
         console.log("log in handled");
-    }
+    };
 
-    handleExitClick() {
+    handleExitClick = () => {
         const { showModal } = this.state;
         this.setState({ showModal: !showModal });
-    }
+    };
 
-    handleSignUp() {
+    handleSignUp = () => {
         console.log("sign up");
         const { showModal } = this.state;
         this.setState({ showModal: !showModal });
-    }
+    };
 
     render() {
         const { showModal } = this.state;
@@ -48,6 +44,7 @@ class HomePage extends Component {
                             <></>
                         )}
                         <NavBar
+                            title={"Second Chance"}
                             links={["About", "Donate", "Contact"]}
                             buttons={["Sign Out"]}
                             buttonStyles={["light", "dark"]}
