@@ -2,8 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../styles/Home/HomeMainSection.css";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import { useHistory } from "react-router-dom";
 
 function HomeMainSection(props) {
+    const history = useHistory();
+    const handleClick = () => {
+        history.push("/browse");
+    };
+
     return (
         <section className="home-text-section">
             <h1 className="home-h1">Staying Connected Matters.</h1>
@@ -33,7 +39,9 @@ function HomeMainSection(props) {
                 </div>
             </form>
             <div className="button-flex-container">
-                <button className="browse-all-button">Browse all states</button>
+                <button className="browse-all-button" onClick={handleClick}>
+                    Browse all states
+                </button>
             </div>
         </section>
     );
