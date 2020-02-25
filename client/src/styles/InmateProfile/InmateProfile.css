@@ -1,0 +1,108 @@
+.inmate-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.inmate-main-div {
+    width: 1024px;
+    height: 100%;
+}
+
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    background: white;
+    padding: 20px;
+}
+
+.profile-header-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.photo-section {
+    min-height: 200px;
+    padding: 20px 0px;
+}
+
+.profile-photo {
+    display: inline-block;
+
+    margin-right: 30px;
+}
+
+#default-photo {
+    width: 220px;
+}
+
+#other-photo {
+    width: 100px;
+}
+
+.about-header {
+    border-bottom: 1px solid black;
+    font-weight: normal;
+    padding-bottom: 8px;
+}
+
+.about-text {
+    padding-top: 20px;
+    line-height: 1.8rem;
+}
+
+.interests-section {
+    padding-top: 20px;
+}
+
+.interests-header {
+    margin-bottom: 10px;
+}
+
+.interests-section span {
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 40px;
+
+    margin-top: 16px;
+    background: #f4dcdc;
+}
+
+.interests-span-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.goals-title {
+    margin: 20px 0px;
+}
+
+.goal-header {
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+.goal {
+    border: 1px solid black;
+    min-height: 150px;
+    margin-bottom: 20px;
+}
+
+.inc-header {
+    border-bottom: 1px solid black;
+    font-weight: normal;
+    padding-bottom: 8px;
+}
+
+ul li {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 0px;
+}
+
+.inc-list-items-div {
+    padding-left: 10px;
+}
