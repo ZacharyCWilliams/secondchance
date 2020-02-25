@@ -1,148 +1,27 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../containers/NavBar";
-import MainContainer from "../containers/MainContainer";
 import "../styles/Browse/BrowseProfiles.css";
 import { render } from "react-dom";
-
-const profiles = [
-    {
-        name: "Sammy Seymore",
-        age: 24,
-        location: "California",
-        gender: "Female",
-        photos: ["https://i.imgur.com/NEc5Mb1.jpg"]
-    },
-    {
-        name: "Lisa Lacomp",
-        age: 31,
-        location: "California",
-        gender: "Female",
-        photos: ["https://imgur.com/DLZXW1J.jpg"]
-    },
-    {
-        name: "Franny Frider",
-        age: 44,
-        location: "Ohio",
-        gender: "Female",
-        photos: ["https://i.imgur.com/SxotJpl.jpg"]
-    },
-    {
-        name: "Lex Aliceson",
-        age: 54,
-        location: "Texas",
-        gender: "Female",
-        photos: ["https://i.imgur.com/cUxkE6r.jpg"]
-    },
-    {
-        name: "Julia Campbell",
-        age: 21,
-        location: "Florida",
-        gender: "Female",
-        photos: ["https://i.imgur.com/R0IpXPi.jpg"]
-    },
-    {
-        name: "Courtney Wisemen",
-        age: 19,
-        location: "New York",
-        gender: "Female",
-        photos: ["https://i.imgur.com/2pZwaEc.jpg"]
-    },
-    {
-        name: "Jessica Callter",
-        age: 22,
-        location: "Idaho",
-        gender: "Female",
-        photos: ["https://i.imgur.com/JWTe2xk.jpg"]
-    },
-    {
-        name: "Lana Lokta",
-        age: 28,
-        location: "California",
-        gender: "Female",
-        photos: ["https://i.imgur.com/dJd2Rja.jpg"]
-    },
-    {
-        name: "Emily Daniels",
-        age: 20,
-        location: "California",
-        gender: "Female",
-        photos: ["https://i.imgur.com/JoAShsi.jpg"]
-    },
-    {
-        name: "Alex Seymore",
-        age: 24,
-        location: "California",
-        gender: "Male",
-        photos: ["https://i.imgur.com/BQfXkEw.jpg"]
-    },
-    {
-        name: "John Lacomp",
-        age: 31,
-        location: "California",
-        gender: "Male",
-        photos: ["https://i.imgur.com/SVAeq9U.jpg"]
-    },
-    {
-        name: "Brad Frider",
-        age: 44,
-        location: "Ohio",
-        gender: "Male",
-        photos: ["https://i.imgur.com/we76AIL.jpg"]
-    },
-    {
-        name: "Jimmy Lacktack",
-        age: 54,
-        location: "Texas",
-        gender: "Male",
-        photos: ["https://i.imgur.com/P9MHOqJ.jpg"]
-    },
-    {
-        name: "Cooper Campbell",
-        age: 21,
-        location: "Florida",
-        gender: "Male",
-        photos: ["https://i.imgur.com/QqBA3QI.jpg"]
-    },
-    {
-        name: "Jared Wisemen",
-        age: 19,
-        location: "New York",
-        gender: "Male",
-        photos: ["https://i.imgur.com/wBVZ9Aw.jpg"]
-    },
-    {
-        name: "Carter Callter",
-        age: 22,
-        location: "Idaho",
-        gender: "Male",
-        photos: ["https://i.imgur.com/H22xbOJ.jpg"]
-    },
-    {
-        name: "Lana Lokta",
-        age: 28,
-        location: "California",
-        gender: "Female",
-        photos: ["https://i.imgur.com/3PzIvCm.jpg"]
-    },
-    {
-        name: "Emily Daniels",
-        age: 20,
-        location: "California",
-        gender: "Female",
-        photos: ["https://i.imgur.com/4bLOI2K.jpg"]
-    }
-];
+import { Link } from "react-router-dom";
+import { profiles } from "./data";
 
 const mapData = filtered => {
     let data = filtered.map(profile => {
         return (
-            <div className="profile-card">
+            <div key={profile.id} c lassName="profile-card">
                 <div className="profile-media">
-                    <img
-                        className="profile-media"
-                        src={profile.photos[0]}
-                        alt="profile-hero-thumb"
-                    />
+                    <Link
+                        to={{
+                            pathname: `/profile/${profile.id}`,
+                            state: { profile }
+                        }}
+                    >
+                        <img
+                            className="profile-media"
+                            src={profile.photos[0]}
+                            alt="profile-hero-thumb"
+                        />
+                    </Link>
                 </div>
                 <div className="profile-info-section">
                     <li className="profile-li profile-name">

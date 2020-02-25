@@ -22,3 +22,13 @@ button:focus {
     outline: none;
     border: none;
 }
+
+ul,
+li,
+a {
+    list-style: none;
+}
+
+ul {
+    padding: 0px;
+}

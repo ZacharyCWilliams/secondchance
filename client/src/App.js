@@ -4,6 +4,7 @@ import { Switch, Route, Redirect, Link } from "react-router-dom";
 import HomePage from "./containers/HomePage";
 import EnterApp from "./components/EnterSite/EnterApp";
 import BrowseProfiles from "./components/BrowseProfiles";
+import InmateProfile from "./components/InmateProfile";
 
 const localStorageKey = localStorage.getItem("token");
 
@@ -38,6 +39,11 @@ function App() {
             <Switch>
                 <PrivateRoute exact path="/home" component={HomePage} />
                 <PrivateRoute exact path="/browse" component={BrowseProfiles} />
+                <PrivateRoute
+                    exact
+                    path="/profile/:id"
+                    component={InmateProfile}
+                />
                 <Route exact path="/login" component={EnterApp} />
 
                 {auth.isAuthorized ? (
