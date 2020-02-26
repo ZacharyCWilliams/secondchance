@@ -1,7 +1,7 @@
 import React, { Component, useEffect } from "react";
 import "./App.css";
 import { Switch, Route, Redirect, Link } from "react-router-dom";
-import HomePage from "./containers/HomePage";
+import HomePage from "./components/HomePage";
 import EnterApp from "./components/EnterSite/EnterApp";
 import BrowseProfiles from "./components/BrowseProfiles";
 import InmateProfile from "./components/InmateProfile";

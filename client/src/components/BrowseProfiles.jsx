@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import NavBar from "../containers/NavBar";
+import NavBar from "./NavBar";
 import "../styles/Browse/BrowseProfiles.css";
 import { render } from "react-dom";
 import { Link } from "react-router-dom";
@@ -68,8 +68,8 @@ function BrowseProfiles(props) {
                         <div className="sticky-navbar-container">
                             <NavBar
                                 title={"Second Chance"}
-                                links={["Filter", "About"]}
-                                buttons={["Log In", "Sign Up"]}
+                                links={["Profile", "Messages"]}
+                                buttons={["Account"]}
                                 buttonStyles={["light", "dark"]}
                                 buttonActions={[handleLogIn, handleSignUp]}
                             />
