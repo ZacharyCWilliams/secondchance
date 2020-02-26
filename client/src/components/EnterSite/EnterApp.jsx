@@ -5,6 +5,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Modal from "../../components/Modal";
 import "../../styles/EnterSite/mode.css";
 import { withRouter } from "react-router-dom";
+import NavBar from "../../containers/NavBar";
 
 class EnterApp extends Component {
     constructor(props) {
@@ -20,60 +21,70 @@ class EnterApp extends Component {
         token && this.props.history && this.props.history.push("/home");
     }
 
-    handleLogIn = () => {
-        console.log("log in handled");
+    //closes modals
+    handleExitClick = e => {
+        if (e.target.name === "Sign Up") {
+            const { showSignUp } = this.state;
+            this.setState({ showSignUp: !showSignUp });
+        }
+
+        if (e.target.name === "Log In") {
+            const { showLogIn } = this.state;
+            this.setState({ showLogIn: !showLogIn });
+        }
     };
 
-    handleExitClick = () => {
-        const { showSignUp } = this.state;
-        this.setState({ showSignUp: !showSignUp });
+    //displays modals
+    handleLogIn = () => {
+        const { showLogIn } = this.state;
+        this.setState({ showLogIn: !showLogIn });
     };
 
     handleSignUp = () => {
-        console.log("sign up");
         const { showSignUp } = this.state;
         this.setState({ showSignUp: !showSignUp });
-        console.log(this.state);
     };
 
     render() {
-        const { showSignUp } = this.state;
+        const { showSignUp, showLogIn } = this.state;
         return (
             <div>
                 <div className="enter-app-nav-container">
                     <section className="enter-app-nav-bar">
-                        <h2 className="enter-app-h2">Second Chance</h2>
-
-                        <div className="enter-app-button-container">
-                            <button className="enter-app-button enter-app-mode">
-                                Dark Mode
-                            </button>
-                            <button className="enter-app-button enter-app-login">
-                                LOG IN
-                            </button>
-                            <button
-                                onClick={this.handleSignUp}
-                                className="enter-app-button enter-app-signup"
-                            >
-                                SIGN UP
-                            </button>
-                        </div>
+                        <NavBar
+                            title={"Second Chance"}
+                            links={["", ""]}
+                            buttons={["Log In", "Sign Up"]}
+                            buttonStyles={["light", "dark"]}
+                            buttonActions={[
+                                this.handleLogIn,
+                                this.handleSignUp
+                            ]}
+                        />
                     </section>
                 </div>
                 <section className="home-text-section">
                     {showSignUp ? (
-                        <Modal onClick={this.handleExitClick} />
+                        <Modal
+                            title="Sign Up"
+                            fields={["username", "email", "password"]}
+                            onClick={this.handleExitClick}
+                        />
                     ) : (
-                        <></>
+                        showLogIn && (
+                            <Modal
+                                title="Log In"
+                                fields={["email", "password"]}
+                                onClick={this.handleExitClick}
+                            />
+                        )
                     )}
                     <h1 className="home-h1">Staying Connected Matters.</h1>
                     <p className="home-p">
                         Keeping inmates and their loved ones connected during
                         their time apart.
                     </p>
-                    {/* Second Chance is a platform aimed at improving our
-                  justice system. We're driving down the recidivism rate
-                  by  */}
+
                     <form className="home-form">
                         <div className="search-container">
                             <div className="location-icon">
@@ -88,13 +99,19 @@ class EnterApp extends Component {
                                 />
                             </div>
                             <div>
-                                <button className="home-submit-button">
+                                <div
+                                    onClick={this.handleSignUp}
+                                    className="home-submit-button"
+                                >
                                     <ArrowForwardIosIcon
-                                        style={{ fontSize: "14px" }}
+                                        style={{
+                                            fontSize: "14px",
+                                            paddingTop: "20px"
+                                        }}
                                     >
                                         ArrowForwardIosIcon
                                     </ArrowForwardIosIcon>
-                                </button>
+                                </div>
                             </div>
                         </div>
                     </form>
