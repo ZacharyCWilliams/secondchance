@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Modal from "../../components/Modal";
 import "../../styles/EnterSite/mode.css";
 import { withRouter } from "react-router-dom";
-import NavBar from "../../containers/NavBar";
+import NavBar from "../NavBar";
 
 class EnterApp extends Component {
     constructor(props) {
@@ -79,6 +79,7 @@ class EnterApp extends Component {
                             />
                         )
                     )}
+
                     <h1 className="home-h1">Staying Connected Matters.</h1>
                     <p className="home-p">
                         Keeping inmates and their loved ones connected during

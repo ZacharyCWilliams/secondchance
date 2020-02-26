@@ -9,6 +9,7 @@ function HomeMainSection(props) {
     const history = useHistory();
 
     const handleClick = e => {
+        e.preventDefault();
         if (e.target.name === "browse-button") {
             history.push({
                 pathname: "/browse",
@@ -16,11 +17,18 @@ function HomeMainSection(props) {
             });
         }
 
-        if (e.target.name === "state-search-button") {
+        if (
+            e.target.name === "state-search-button" &&
+            locationSearchInput &&
+            locationSearchInput !== " "
+        ) {
             history.push({
                 pathname: "/browse",
                 state: { input: locationSearchInput }
             });
+        } else if (e.target.name === "state-search-button") {
+            //make this trigger an error modal later
+            alert("Please provide valid state input");
         }
     };
 

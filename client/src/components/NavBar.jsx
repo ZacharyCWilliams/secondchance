@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import "../styles/NavBar/NavBar.css";
 
 //components
-import NavMapper from "../components/NavMapper";
+import NavMapper from "./NavMapper";
 
 class NavBar extends Component {
     constructor(props) {

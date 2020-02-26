@@ -1,22 +1,27 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import NavBar from "../containers/NavBar";
+import { useHistory } from "react-router-dom";
+import NavBar from "./NavBar";
 import "../styles/InmateProfile/InmateProfile.css";
 
 const InmateProfile = ({ location }) => {
     const { profile: inmate } = location.state;
-
+    const history = useHistory();
     const [profile, setProfile] = useState(inmate);
     const image = profile.photos[0];
+
+    const backToBrowse = () => {
+        history.goBack();
+    };
     return (
         <div className="inmate-container">
             <div className="inmate-main-div">
                 <NavBar
                     title={"Second Chance"}
-                    links={["Filter", "About"]}
-                    buttons={["Log In", "Sign Up"]}
-                    buttonStyles={["light", "dark"]}
-                    buttonActions={["", ""]}
+                    links={["", ""]}
+                    buttons={["back to browse"]}
+                    buttonStyles={["dark"]}
+                    buttonActions={[backToBrowse]}
                 />
 
                 <div className="profile-main">
