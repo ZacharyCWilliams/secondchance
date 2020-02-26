@@ -6,7 +6,6 @@ import "../styles/Home/HomePage.css";
 //components
 import NavBar from "./NavBar";
 import HomeMainSection from "../components/HomeMainSection";
-import Modal from "../components/Modal";
 import { withRouter } from "react-router-dom";
 
 class HomePage extends Component {
