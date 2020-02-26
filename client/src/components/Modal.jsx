@@ -62,6 +62,32 @@ const Modal = props => {
         }
     };
 
+    const createInput = (stateField, fields) =>
+        [fields].map(field => (
+            <input
+                type="text"
+                name={field}
+                field={field}
+                value={stateField}
+                className="modal-form-input"
+                placeholder={field}
+                onChange={handleChange}
+            />
+        ));
+
+    const renderInputs = () => {
+        return (
+            <>
+                {props.fields.includes("username") &&
+                    createInput(username, ["username"])}
+                {props.fields.includes("email") &&
+                    createInput(email, ["email"])}
+                {props.fields.includes("password") &&
+                    createInput(password, ["password"])}
+            </>
+        );
+    };
+
     return (
         <div>
             <ModalOverlay />
@@ -69,16 +95,15 @@ const Modal = props => {
                 <div className="modal-header-section">
                     <div className="modal-exit-button">
                         <button
+                            name={props.title}
                             style={{ background: "red" }}
                             onClick={props.onClick}
                         >
                             X
                         </button>
                     </div>
-                    <h1 className="modal-title">Sign Up</h1>
+                    <h1 className="modal-title">{props.title}</h1>
                 </div>
-
-                {/* SIGN UP FORM MODAL*/}
                 <div className="modal-form-container">
                     <form className="modal-form" onSubmit={onSubmit}>
                         {userRegisterStatus ? (
@@ -88,33 +113,9 @@ const Modal = props => {
                         ) : (
                             <> </>
                         )}
-                        <input
-                            type="text"
-                            name="username"
-                            username="username"
-                            value={username}
-                            className="modal-form-input"
-                            placeholder="username"
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="text"
-                            name="email"
-                            email="email"
-                            className="modal-form-input"
-                            placeholder="email address"
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="text"
-                            name="password"
-                            password="password"
-                            className="modal-form-input"
-                            placeholder="password"
-                            onChange={handleChange}
-                        />
+                        <>{renderInputs()}</>
                         <button className="signup-button" type="submit">
-                            SIGN UP
+                            {props.title.toUpperCase()}
                         </button>
                     </form>
                 </div>
