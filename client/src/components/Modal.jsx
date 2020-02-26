@@ -25,6 +25,24 @@ const registerUser = async (username, email, password) => {
     }
 };
 
+const loginUser = async (email, password) => {
+    try {
+        const res = await axios.post("/api/auth", {
+            email: email,
+            password: password
+        });
+        if (res.status === 200) {
+            console.log("registerUserServerRes", res.headers["x-auth-token"]);
+            const token = res.headers["x-auth-token"];
+            localStorage.setItem("token", token);
+            return { serverResponse: true };
+        }
+    } catch (error) {
+        console.log("registerUserServerErrorRes", error.response);
+        let errorMessage = error.response.data;
+        return { error: errorMessage, serverResponse: false };
+    }
+};
 const Modal = props => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -46,14 +64,35 @@ const Modal = props => {
         if (e.target.name === "password") setPassword(e.target.value);
     };
 
-    const onSubmit = async e => {
-        e.preventDefault();
+    const submitNewUser = async () => {
         const { serverResponse, error } = await registerUser(
             username,
             email,
             password
         );
 
+        if (!serverResponse) {
+            setUserRegisterStatus(error);
+        } else if (serverResponse) {
+            auth.authenticate();
+            setRedirectToReferrer(true);
+        }
+    };
+
+    const routeSubmit = e => {
+        e.preventDefault();
+
+        if (props.title === "Log In") {
+            loginExistingUser();
+        }
+
+        if (props.title === "Sign Up") {
+            submitNewUser();
+        }
+    };
+
+    const loginExistingUser = async e => {
+        const { serverResponse, error } = await loginUser(email, password);
         if (!serverResponse) {
             setUserRegisterStatus(error);
         } else if (serverResponse) {
@@ -105,7 +144,7 @@ const Modal = props => {
                     <h1 className="modal-title">{props.title}</h1>
                 </div>
                 <div className="modal-form-container">
-                    <form className="modal-form" onSubmit={onSubmit}>
+                    <form className="modal-form" onSubmit={routeSubmit}>
                         {userRegisterStatus ? (
                             <span>
                                 <p>{userRegisterStatus}</p>
@@ -118,6 +157,7 @@ const Modal = props => {
                                 ? renderInputs()
                                 : console.log("no fields prop provided")}
                         </>
+
                         <button className="signup-button" type="submit">
                             {props.title
                                 ? props.title.toUpperCase()
