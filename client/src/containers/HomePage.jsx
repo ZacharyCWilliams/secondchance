@@ -7,51 +7,29 @@ import "../styles/Home/HomePage.css";
 import NavBar from "./NavBar";
 import HomeMainSection from "../components/HomeMainSection";
 import Modal from "../components/Modal";
+import { withRouter } from "react-router-dom";
 
 class HomePage extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            showModal: false
-        };
     }
 
-    handleLogIn = () => {
-        console.log("log in handled");
-    };
-
-    handleExitClick = () => {
-        const { showModal } = this.state;
-        this.setState({ showModal: !showModal });
-    };
-
-    handleSignUp = () => {
-        console.log("sign up");
-        const { showModal } = this.state;
-        this.setState({ showModal: !showModal });
+    handleSignOut = () => {
+        localStorage.removeItem("token");
+        this.props.history.push("/login");
     };
 
     render() {
-        const { showModal } = this.state;
         return (
             <>
                 <div className="home-container">
                     <div className="home-main-div">
-                        {showModal ? (
-                            <Modal onClick={this.handleExitClick} />
-                        ) : (
-                            <></>
-                        )}
                         <NavBar
                             title={"Second Chance"}
                             links={["About", "Donate", "Contact"]}
                             buttons={["Sign Out"]}
                             buttonStyles={["light", "dark"]}
-                            buttonActions={[
-                                this.handleLogIn,
-                                this.handleSignUp
-                            ]}
+                            buttonActions={[this.handleSignOut]}
                         />
                         <HomeMainSection />
                     </div>
@@ -60,4 +38,4 @@ class HomePage extends Component {
         );
     }
 }
-export default HomePage;
+export default withRouter(HomePage);
