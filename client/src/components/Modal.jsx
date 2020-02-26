@@ -113,9 +113,15 @@ const Modal = props => {
                         ) : (
                             <> </>
                         )}
-                        <>{renderInputs()}</>
+                        <>
+                            {props.fields
+                                ? renderInputs()
+                                : console.log("no fields prop provided")}
+                        </>
                         <button className="signup-button" type="submit">
-                            {props.title.toUpperCase()}
+                            {props.title
+                                ? props.title.toUpperCase()
+                                : console.log("no title prop provided")}
                         </button>
                     </form>
                 </div>
