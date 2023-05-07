@@ -1,16 +1,15 @@
-import ModalOverlay from "./ModalOverlay";
 import React, { useState } from "react";
 import axios from "axios";
-
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const registerUser = async (username, email, password) => {
   try {
     const res = await axios.post("/api/users", {
-      username: username,
-      email: email,
-      password: password
+      username,
+      email,
+      password
     });
+    
     if (res.status === 200) {
       console.log(res);
       return { serverResponse: true };
@@ -22,54 +21,35 @@ const registerUser = async (username, email, password) => {
   }
 };
 
-const Modal = props => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Modal = ({ onClick }) => {
+  const [formData, setFormData] = useState({ username: "", email: "", password: "" });
   const [userRegisterStatus, setUserRegisterStatus] = useState("");
 
   let history = useHistory();
 
-  const redirectToBrowsePage = () => {
-    history.push("/browse");
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleUsername = e => {
-    setUsername(e.target.value);
-  };
-
-  const handleEmail = e => {
-    setEmail(e.target.value);
-  };
-
-  const handlePassword = e => {
-    setPassword(e.target.value);
-  };
-
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const { serverResponse, error } = await registerUser(
-      username,
-      email,
-      password
-    );
+    const { serverResponse, error } = await registerUser(formData.username, formData.email, formData.password);
     if (!serverResponse) {
       setUserRegisterStatus(error);
-    } else if (serverResponse) {
-      setTimeout(() => {
-        redirectToBrowsePage();
-      }, 1000);
+    } else {
       setUserRegisterStatus("User created successfully!");
+      setTimeout(() => {
+        history.push("/browse");
+      }, 1000);
     }
   };
 
   return (
     <div>
-      {/* <ModalOverlay /> */}
       <div className="modal">
         <div className="modal-header-section">
           <div className="modal-exit-button">
-            <button style={{ background: "red" }} onClick={props.onClick}>
+            <button style={{ background: "red" }} onClick={onClick}>
               X
             </button>
           </div>
@@ -77,28 +57,20 @@ const Modal = props => {
         </div>
         <div className="modal-form-container">
           <form className="modal-form" onSubmit={onSubmit}>
-            {userRegisterStatus ? (
-              <span>
-                <p>{userRegisterStatus}</p>
-              </span>
-            ) : (
-              <> </>
-            )}
+            {userRegisterStatus && <p>{userRegisterStatus}</p>}
             <input
-              type="text"
+              type="email"
               name="email"
-              email="email"
               className="modal-form-input"
-              placeholder="email address"
-              onChange={handleEmail}
+              placeholder="Email address"
+              onChange={handleInputChange}
             />
             <input
-              type="text"
+              type="password"
               name="password"
-              password="password"
               className="modal-form-input"
-              placeholder="password"
-              onChange={handlePassword}
+              placeholder="Password"
+              onChange={handleInputChange}
             />
             <button className="signup-button" type="submit">
               LOG IN
@@ -109,4 +81,5 @@ const Modal = props => {
     </div>
   );
 };
+
 export default Modal;
