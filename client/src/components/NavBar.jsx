@@ -1,52 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
-//styles
-import "../styles/NavBar/NavBar.css";
 
-//components
 import NavMapper from "./NavMapper";
 
-class NavBar extends Component {
-    constructor(props) {
-        super(props);
-    }
+import "../styles/NavBar/NavBar.css";
 
-    handleClick = () => {
-        this.props.history.push("/home");
-    };
-    navigation() {
-        const buttons = this.props.buttons;
-        const links = this.props.links;
-        const buttonActions = this.props.buttonActions;
-        const buttonStyles = this.props.buttonStyles;
-
-        return (
-            <NavMapper
-                buttons={buttons}
-                links={links}
-                buttonActions={buttonActions}
-                buttonStyles={buttonStyles}
-            />
-        );
-    }
-
-    render() {
-        return (
-            <nav className="nav-container">
-                <div className="nav-content">
-                    <div className="nav-title-container">
-                        <a
-                            onClick={this.handleClick}
-                            style={{ cursor: "pointer" }}
-                        >
-                            <h1 className="nav-title">{this.props.title}</h1>
-                        </a>
-                    </div>
-                    <div className="nav-links">{this.navigation()}</div>
-                </div>
-            </nav>
-        );
-    }
-}
+const NavBar = ({ history, buttons, links, buttonActions, buttonStyles, title }) => (
+  <nav className="nav-container">
+    <div className="nav-content">
+      <div className="nav-title-container">
+        <h1 className="nav-title" onClick={() => history.push("/home")} style={{ cursor: "pointer" }}>
+          {title}
+        </h1>
+      </div>
+      <div className="nav-links">
+        <NavMapper buttons={buttons} links={links} buttonActions={buttonActions} buttonStyles={buttonStyles} />
+      </div>
+    </div>
+  </nav>
+);
 
 export default withRouter(NavBar);
