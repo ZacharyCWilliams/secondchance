@@ -72,11 +72,12 @@ class EnterApp extends Component {
                         />
                     ) : (
                         showLogIn && (
-                            <Modal
-                                title="Log In"
-                                fields={["email", "password"]}
-                                onClick={this.handleExitClick}
-                            />
+                            // <Modal
+                            //     title="Log In"
+                            //     fields={["email", "password"]}
+                            //     onClick={this.handleExitClick}
+                            // />
+                            <></>
                         )
                     )}
 

@@ -65,7 +65,7 @@ const Modal = props => {
 
   return (
     <div>
-      <ModalOverlay />
+      {/* <ModalOverlay /> */}
       <div className="modal">
         <div className="modal-header-section">
           <div className="modal-exit-button">

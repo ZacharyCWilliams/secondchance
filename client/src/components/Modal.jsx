@@ -1,9 +1,7 @@
-import ModalOverlay from "./ModalOverlay";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useHistory, Redirect } from "react-router-dom";
-import { auth } from "../../src/App";
-import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
+// import { useAuth } from "../utils/useAuth";
 
 const registerUser = async (username, email, password) => {
     try {
@@ -74,7 +72,7 @@ const Modal = props => {
         if (!serverResponse) {
             setUserRegisterStatus(error);
         } else if (serverResponse) {
-            auth.authenticate();
+            // auth.authenticate();
             setRedirectToReferrer(true);
         }
     };
@@ -96,7 +94,7 @@ const Modal = props => {
         if (!serverResponse) {
             setUserRegisterStatus(error);
         } else if (serverResponse) {
-            auth.authenticate();
+            // auth.authenticate();
             setRedirectToReferrer(true);
         }
     };
@@ -129,7 +127,7 @@ const Modal = props => {
 
     return (
         <div>
-            <ModalOverlay />
+            {/* <ModalOverlay /> */}
             <div className="modal">
                 <div className="modal-header-section">
                     <div className="modal-exit-button">

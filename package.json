@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon --trace-warnings server.js",
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "body-parser": "^1.19.0",
     "config": "^3.2.5",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "joi": "^14.3.1",
@@ -23,5 +25,8 @@
     "mongoose": "^5.8.10",
     "morgan": "^1.9.1",
     "winston": "2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
