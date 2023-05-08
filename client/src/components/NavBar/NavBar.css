@@ -46,3 +46,7 @@ a:hover {
   color: #5034FF;
   background-color: #F0F3FF;
 }
+
+ul {
+  display: flex;
+}
