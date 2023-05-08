@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import "../styles/Home/HomePage.css";
 
 //components
-import NavBar from "./NavBar";
+import NavBar from "./NavBar/NavBar";
 import HomeMainSection from "./HomeMainSection";
 import { withRouter } from "react-router-dom";
 

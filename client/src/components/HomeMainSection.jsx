@@ -38,7 +38,8 @@ function HomeMainSection(props) {
 
     return (
         <section className="home-text-section">
-            <h1 className="home-h1">Staying Connected Matters.</h1>
+            {/* <h1 className="home-h1">SC</h1> */}
+            <h1 className="home-h1">Empowering people through education, rehabilitation, and love.</h1>
             <p className="home-p">
                 Keeping inmates and their loved ones connected during their time
                 apart.

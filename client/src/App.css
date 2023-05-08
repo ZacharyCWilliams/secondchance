@@ -1,12 +1,11 @@
 .App {
-    width: 100%;
+    width: 100vw;
     height: 100%;
-    background-image: linear-gradient(to left, #f4dcdc, pink);
-    overflow-x: hidden;
+    background: #f1f3ff
 }
-body {
+/* body {
     background-image: linear-gradient(to left, #f4dcdc, pink);
-}
+} */
 
 h1,
 h2,

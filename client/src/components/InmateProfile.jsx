@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import NavBar from "./NavBar";
+import NavBar from "./NavBar/NavBar";
 import "../styles/InmateProfile/InmateProfile.css";
 
 const InmateProfile = ({ location }) => {

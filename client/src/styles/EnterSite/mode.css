@@ -125,10 +125,7 @@
 }
 
 .enter-app-nav-bar {
-    /* display: flex;
-    justify-content: space-between;
-    width: 1024px; */
-    width: 1024px;
+    width: 100vw;
     height: 100%;
 }
 
