@@ -1,8 +1,7 @@
 # Second Chance
 
-## Empowering People Through Education, Rehabilitation, and Love
-
 Second Chance is a platform dedicated to giving people a fresh start in life, regardless of their background or past experiences. Our mission is to provide hope and a helping hand to those who need it the most. Whether someone has faced economic hardships, spent time in incarceration, grown up in the foster system, or faced other challenges, we believe that everyone deserves a Second Chance.
+## Empowering People Through Education, Rehabilitation, and Love
 
 Our platform currently includes three key components:
 
