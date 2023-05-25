@@ -23,13 +23,6 @@ class HomePage extends Component {
             <>
                 <div className="home-container">
                     <div className="home-main-div">
-                        <NavBar
-                            title={"Second Chance"}
-                            links={["About", "Donate", "Contact"]}
-                            buttons={["Sign Out"]}
-                            buttonStyles={["light", "dark"]}
-                            buttonActions={[this.handleSignOut]}
-                        />
                         <HomeMainSection />
                     </div>
                 </div>

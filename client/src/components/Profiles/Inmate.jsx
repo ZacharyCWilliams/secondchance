@@ -26,12 +26,6 @@ function Inmate() {
   return (
     <div className="browse-profiles-container">
       <div className="home-container">
-        <NavBar
-          links={["Filter", "About"]}
-          buttons={["Log In", "Sign Up"]}
-          buttonStyles={["light", "dark"]}
-          buttonActions={[handleLogIn, handleSignUp]}
-        />
         
       </div>
     </div>
