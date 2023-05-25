@@ -1,39 +1,17 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
-import NavButton from "../NavButton";
-import "./NavBar.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './NavBar.css';
 
-const NavBar = ({ history, buttons, links, buttonActions, title }) => {
-  const linksHTML = links
-    ? links.map((link, index) => (
-        <a className="nav-link" key={index} href="#">
-          {link}
-        </a>
-      ))
-    : null;
-
-  const buttonsHTML = buttons
-    ? buttons.map((button, index) => (
-        <NavButton
-          text={button}
-          key={index}
-          onClick={buttonActions[index]}
-          style={{ marginLeft: "1rem" }}
-        />
-      ))
-    : null;
-
-  return (
+const NavBar = () => (
     <nav className="navbar">
-      <a className="brand" href="#" onClick={() => history.push("/home")}>
-        {title}
-      </a>
+      <Link className="brand" to="/home">
+        Second Chance
+      </Link>
       <ul className="nav">
-        {linksHTML}
-        {buttonsHTML}
+        <Link className="nav-link" to="/login">Login</Link>
+        <Link className="nav-link" to="/signup">Sign Up</Link>
       </ul>
     </nav>
   );
-};
 
-export default withRouter(NavBar);
+export default NavBar;

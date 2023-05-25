@@ -16,14 +16,6 @@ const InmateProfile = ({ location }) => {
     return (
         <div className="inmate-container">
             <div className="inmate-main-div">
-                <NavBar
-                    title={"Second Chance"}
-                    links={["", ""]}
-                    buttons={["back to browse"]}
-                    buttonStyles={["dark"]}
-                    buttonActions={[backToBrowse]}
-                />
-
                 <div className="profile-main">
                     <div className="profile-header-section">
                         <div className="profile-name-age-location">

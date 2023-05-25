@@ -1,7 +1,5 @@
 import "../../styles/EnterSite/mode.css";
 import React, { useEffect, useState } from "react";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Modal from "../../components/Modal";
 import { withRouter } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
@@ -31,17 +29,7 @@ const EnterApp = (props) => {
     return (
         <div>
             <div className="enter-app-nav-container">
-                <section className="enter-app-nav-bar">
-                    <NavBar
-                        title={"SC"}
-                        links={["Log in", "Sign up"]}
-                        buttonStyles={["light", "dark"]}
-                        buttonActions={[
-                            () => handleModalToggle("showLogIn"),
-                            () => handleModalToggle("showSignUp")
-                        ]}
-                    />
-                </section>
+            <NavBar />
             </div>
             <div className="diagonal-div"></div>
             <h1 className="sc-logo">SC</h1>
